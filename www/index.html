@@ -1,61 +1,42 @@
 <!DOCTYPE html>
-<html ng-app="ui.bootstrap.demo">
+<html ng-app="fasttrav">
 <head>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular-animate.min.js"></script>
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <title>Hello World</title>
-    <script src="js/shared/angular.js"></script>
-    <script src="js/shared/angular-animate.js"></script>
-    <script src="js/shared/ui-bootstrap-tpls-0.14.3.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/submit.js"></script>
+    <title>Travel Fast</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <meta charset="utf-8">
 </head>
 <body>
-<style scoped>
-    .typeahead-demo {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        background-color: #f9f9f9;
-    }
-
-    .typeahead-demo {
-        padding: 10px 20px;
-        border-bottom: 1px solid #ddd;
-        color: #868686;
-    }
-
-    .typeahead-demo {
-        position: static;
-        float: none;
-        display: block;
-        min-width: 160px;
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
+<script src="js/shared/jquery-1.11.3.min.js"></script>
+<script src="js/shared/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="js/app.js"></script>
+<script src="js/submit.js"></script>
+<style type="text/css">
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 500px; width: auto; }
 </style>
-<div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+
+<div class='container-fluid typeahead' ng-controller="TypeaheadCtrl">
 
     <h4>Wybierz początek i koniec trasy</h4>
     <pre>Start: {{start | json}}</pre>
     <pre>Koniec: {{end | json}}</pre>
     <form action="http://edi.iem.pw.edu.pl/matlaczm/apka/map" name="cities-form">
+
         <input id="start" type="text" ng-model="start"
                uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+
         <input id="end" type="text" ng-model="end"
                uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+
         <button type="submit" id="submit">Submit</button>
     </form>
 </div>
-<script src="js/shared/jquery-1.11.3.min.js"></script>
-<script src="js/shared/jquery-migrate-1.2.1.min.js"></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC0fyRGllwPtxZdknHd_nPYAuloCYIiF_0'></script>
+
 </body>
 </html>
