@@ -1,7 +1,7 @@
 /**
  * Created by Marcin on 09.01.2016.
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     function hasConnection() {
 
         // Handle IE and more capable browsers
@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    if (hasConnection()){
-        $('#connection')[0].children[0].textContent = "You have internet connection";
-    } else {
-        $('#connection')[0].children[0].textContent =  "No connection detected";
-    }
+    var checkConnection = function () {
+        if (hasConnection()) {
+            $('#connection')[0].children[0].textContent = "You have internet connection";
+        } else {
+            $('#connection')[0].children[0].textContent = "No connection detected";
+            checkConnection()
+        }
+    };
+    checkConnection();
 });
