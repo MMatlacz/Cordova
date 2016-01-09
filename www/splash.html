@@ -24,8 +24,9 @@
 <script src="js/shared/offline.js"></script>
 <script>
     if (!Offline.check().offline) {
-
         window.location.href = 'index.html';
+    } else {
+        window.close()
     }
 </script>
 </body>
