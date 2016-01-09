@@ -26,9 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
             $('#connection')[0].children[0].textContent = "You have internet connection";
         } else {
             $('#connection')[0].children[0].textContent = "No connection detected";
-            setTimeout(checkConnection, 5);
+            sleep(500);
             checkConnection()
         }
     };
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+                break;
+            }
+        }
+    }
     checkConnection();
 });
