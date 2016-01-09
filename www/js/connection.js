@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var status;
 
         // Open new request as a HEAD to the root hostname with a random param to bust the cache
-        xhr.open("HEAD", "//" + window.location.hostname + "/?rand=" + Math.floor((1 + Math.random()) * 0x10000), false);
+        xhr.open("GET", "http://edi.iem.pw.edu.pl/matlaczm/apka", false);
 
         // Issue request and handle response
         try {
