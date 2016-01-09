@@ -76,5 +76,23 @@
     </form>
 </div>
 <script src="js/submit.js"></script>
+<script>
+    document.addEventListener("backbutton", onBackKeyDown, false);
+
+    function onBackKeyDown() {
+        navigator.notification.confirm(
+                'Do you want to quit',
+                onConfirmQuit,
+                'QUIT TITLE',
+                'OK,Cancel'
+        );
+
+    }
+    function onConfirmQuit(button){
+        if(button == "1"){
+            navigator.app.exitApp();
+        }
+    }
+</script>
 </body>
 </html>
