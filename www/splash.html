@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="//fast.eager.io/gkeai2Ljny.js"></script>
+
     <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
     <meta name="msapplication-tap-highlight" content="no">
@@ -18,9 +18,15 @@
         <label>No internet connection detected</label>
     </div>
 </div>
-<script src="js/connection.js"></script>
 <script src="js/shared/jquery-1.11.3.min.js"></script>
 <script src="js/shared/jquery-migrate-1.2.1.min.js"></script>
+<script src="//fast.eager.io/SvBsSgixbc.js"></script>
 <script src="js/shared/offline.js"></script>
+<script>
+    if (!Offline.check().offline) {
+
+        window.location.href = 'index.html';
+    }
+</script>
 </body>
 </html>
