@@ -2,6 +2,8 @@
 <html ng-app="ui.bootstrap.demo">
 <head>
     <script src="js/shared/gkeai2Ljny.js"></script>
+
+
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
@@ -9,19 +11,16 @@
     <title>Travel Fast</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/splash.css" rel="stylesheet">
     <meta charset="utf-8">
-    <script src="js/shared/jquery-1.11.3.min.js"></script>
-    <script src="js/shared/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/shared/offline.js"></script>
-    <script src="js/shared/angular.js"></script>
-    <script src="js/shared/angular-animate.js"></script>
-    <script src="js/shared/ui-bootstrap-tpls-0.14.3.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/submit.js"></script>
 </head>
 <body>
-
+<script src="js/shared/jquery-1.11.3.min.js"></script>
+<script src="js/shared/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/shared/angular.js"></script>
+<script src="js/shared/angular-animate.js"></script>
+<script src="js/shared/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="js/app.js"></script>
+<script src="js/submit.js"></script>
 <style scoped>
     .typeahead-demo {
         position: absolute;
@@ -46,7 +45,17 @@
         background-color: transparent;
         border: none;
         border-radius: 0;
+        border-radius: 0;
         box-shadow: none;
+    }
+
+    #start {
+        margin-top: 20px;
+    }
+    #end {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
     }
 </style>
 <div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
@@ -55,10 +64,13 @@
     <pre>Start: {{start | json}}</pre>
     <pre>Koniec: {{end | json}}</pre>
     <form action="http://edi.iem.pw.edu.pl/matlaczm/apka/map" name="cities-form">
+
         <input id="start" type="text" ng-model="start"
                uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+
         <input id="end" type="text" ng-model="end"
                uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+
         <button type="submit" id="submit">Submit</button>
     </form>
 </div>
