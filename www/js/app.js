@@ -1,7 +1,7 @@
 /**
  * Created by Marcin on 06.01.2016.
  */
-angular.module('ui.bootstrap.demo', ['ngAnimate', 'ui.bootstrap'])
+angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
 .controller('TypeaheadCtrl', function ($scope) {
 
     $scope.start = undefined;
