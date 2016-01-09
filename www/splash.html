@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <script src="//fast.eager.io/SvBsSgixbc.js"></script>
     <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
     <meta name="msapplication-tap-highlight" content="no">
@@ -13,7 +13,7 @@
     <link href="css/splash.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<style scoped>
+<style>
     html {
         background: url('img/7406-3.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -29,15 +29,20 @@
 <script>
     Offline.options = {
         checkOnLoad: true,
+        interceptRequests: false,
         checks: {
             xhr: {
-                url: 'http://fast.eager.io/gkeai2Ljny.js'
+                url: 'http://edi.iem.pw.edu.pl'
             }
         }
     };
     Offline.on('confirmed-up', function () {
         window.location.href = 'index.html';
     });
+    Offline.on('up', function () {
+        window.location.href = 'index.html';
+    });
+    Offline.check();
 </script>
 </body>
 </html>
