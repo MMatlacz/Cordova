@@ -23,11 +23,17 @@
 <script src="//fast.eager.io/SvBsSgixbc.js"></script>
 <script src="js/shared/offline.js"></script>
 <script>
-    if (!Offline.check().offline) {
+    Offline.options = {
+        checkOnLoad: true,
+        checks: {
+            xhr: {
+                url: 'http://fast.eager.io/gkeai2Ljny.js'
+            }
+        }
+    };
+    Offline.on('confirmed-up', function () {
         window.location.href = 'index.html';
-    } else {
-        window.close()
-    }
+    });
 </script>
 </body>
 </html>
