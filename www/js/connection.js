@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function hasConnection() {
 
         // Handle IE and more capable browsers
-        var xhr = new ( window.ActiveXObject || XMLHttpRequest )("Microsoft.XMLHTTP");
+        var xhr = new XMLHttpRequest();
         var status;
 
         // Open new request as a HEAD to the root hostname with a random param to bust the cache
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (hasConnection()) {
             $('#connection')[0].children[0].textContent = "You have internet connection";
         } else {
-            $('#connection')[0].children[0].textContent = "No connection detected";
             sleep(10000);
             checkConnection()
         }
