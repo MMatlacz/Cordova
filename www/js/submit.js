@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 var data = $.parseJSON(xhttp.responseText);
                 console.log(data);
-                var container = $('.typeahead-demo');
+                var container = $('.typeahead');
                 container.children().remove();
                 container.append("<pre>Start: "+data['start']+"</pre> <pre>Koniec: "+data['finish']+"</pre>");
                 for (i in data['path']){
