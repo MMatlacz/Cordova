@@ -59,7 +59,7 @@
 
     }
 </style>
-<div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+<div class='container-fluid typeahead-demo app' ng-controller="TypeaheadCtrl">
 
     <h4>Wybierz początek i koniec trasy</h4>
     <pre>Start: {{start | json}}</pre>
@@ -76,12 +76,5 @@
     </form>
 </div>
 <script src="js/submit.js"></script>
-<script>
-    document.addEventListener("backbutton", onBackKeyDown, false);
-
-    function onBackKeyDown() {
-        navigator.app.exitApp();
-    }
-</script>
 </body>
 </html>
