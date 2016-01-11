@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }
         };
-        xhttp.open("GET", action_g(start, end), true);
+        xhttp.open("GET", action_g(start, end), false);
         xhttp.send();
         console.log(xhttp.responseText)
     }
