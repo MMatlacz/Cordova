@@ -12,7 +12,6 @@ angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var data = $.parseJSON(xhttp.responseText);
-                    console.log(data);
                     var container = $('.typeahead');
                     container.children().remove();
                     container.append("<pre>Start: " + data['start'] + "</pre> <pre>Koniec: " + data['finish'] + "</pre>");
@@ -27,7 +26,7 @@ angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
 
                 }
             };
-            xhttp.open("GET", action_g(start, end), true);
+            xhttp.open("GET", action_g(document.getElementById("start").value, document.getElementById("end").value), true);
             xhttp.send();
             console.log(xhttp.responseText)
         };

@@ -20,15 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
         }
     };
-    document.getElementById("start").onblur = function () {
-        var start = document.getElementById("start").value;
-        document.getElementsByTagName("form")[0].action = action_g(start, end);
-    };
-    document.getElementById("end").onblur = function () {
-        var end = document.getElementById("end").value;
-        document.getElementsByTagName("form")[0].action = action_g(start, end);
-    };
-
 });
 
 var map;
@@ -87,7 +78,6 @@ function mapa(path, start, destination) {
     });
     newPath.setMap(map);
 }
-
 
 
 
