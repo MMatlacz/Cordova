@@ -14,29 +14,28 @@
 <script src="js/shared/jquery-1.11.3.min.js"></script>
 <script src="js/shared/ui-bootstrap-tpls-0.14.3.js"></script>
 <script src="js/app.js"></script>
-<script src="js/submit.js"></script>
-<style type="text/css">
-    html, body { height: 100%; margin: 0; padding: 0; }
-    #map { height: 500px; width: auto; }
+<script src="js/main.js"></script>
+<style type="text/css" scoped>
+
 </style>
 
 <div class='container-fluid typeahead' ng-controller="TypeaheadCtrl">
 
     <h4>Wybierz początek i koniec trasy</h4>
-    <pre>Start: {{start | json}}</pre>
-    <pre>Koniec: {{end | json}}</pre>
-    <form action="http://edi.iem.pw.edu.pl/matlaczm/apka/map" name="cities-form">
+    <div class="container-fluid" ng-controller="SubmitController">
+        <form ng-submit="submit()">
 
-        <input id="start" type="text" ng-model="start"
-               uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+            <input id="start" type="text" ng-model="start"
+                   uib-typeahead="city for city in cities | filter:$viewValue" class="form-control">
 
-        <input id="end" type="text" ng-model="end"
-               uib-typeahead="city for city in cities | filter:$viewValue | limitTo:8" class="form-control">
+            <input id="end" type="text" ng-model="end"
+                   uib-typeahead="city for city in cities | filter:$viewValue" class="form-control">
 
-        <button type="submit" id="submit">Submit</button>
-    </form>
+            <button type="submit" id="submit" class="btn-primary">Submit</button>
+        </form>
+    </div>
 </div>
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC0fyRGllwPtxZdknHd_nPYAuloCYIiF_0'></script>
-
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js"></script>
 </body>
 </html>

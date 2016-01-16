@@ -1,9 +1,22 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background: url('../img/23.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+
+#map {
+    height: 500px;
+    width: auto;
 }
 
 .typeahead {
@@ -13,6 +26,7 @@ html {
     z-index: 1000;
     display: none;
     background-color: transparent;
+    width: 50%;
 }
 
 .typeahead {
@@ -40,5 +54,9 @@ html {
     margin-top: 20px;
     margin-bottom: 20px;
 
+}
+
+#reset {
+    margin-top: 20px;
 }
 
