@@ -3,7 +3,7 @@
  */
 angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
     .controller('TypeaheadCtrl', function ($scope) {
-        $.get('http://edi.iem.pw.edu.pl/matlaczm/apka/cities', function(resp){
+        $.get('http://edi.iem.pw.edu.pl/matlaczm/apka/cities', function (resp) {
             $scope.cities = resp;
         })
     })
