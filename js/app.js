@@ -3,7 +3,9 @@
  */
 angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
     .controller('TypeaheadCtrl', function ($scope) {
-        $scope.cities = ["Szczecin", "Bydgoszcz", "Pozna\u0144", "Wroc\u0142aw", "Katowice", "Krak\u00f3w", "Rzesz\u00f3w", "Warszawa", "Bia\u0142ystok", "Olsztyn", "Gda\u0144sk", "Gdynia", "S\u0142upsk", "Koszalin", "Ko\u0142obrzeg", "Stargard Szczeci\u0144ski", "Pi\u0142a"];
+        $.get('http://edi.iem.pw.edu.pl/matlaczm/apka/cities', function(resp){
+            $scope.cities = resp;
+        })
     })
     .controller('SubmitController', function ($scope) {
 
@@ -28,6 +30,5 @@ angular.module('fasttrav', ['ngAnimate', 'ui.bootstrap'])
             };
             xhttp.open("GET", action_g(document.getElementById("start").value, document.getElementById("end").value), true);
             xhttp.send();
-            console.log(xhttp.responseText)
         };
     });
