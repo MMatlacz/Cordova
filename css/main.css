@@ -26,7 +26,6 @@ html {
     z-index: 1000;
     display: none;
     background-color: transparent;
-    width: 50%;
 }
 
 .typeahead {

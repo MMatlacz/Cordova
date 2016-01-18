@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
 var map;
 
 function initMap() {
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 52.276714, lng: 19.470538},
-        zoom: 6
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 }
 
